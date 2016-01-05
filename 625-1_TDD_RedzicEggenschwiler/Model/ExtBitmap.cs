@@ -438,5 +438,196 @@ namespace ImageConversion
 
             return resultBitmap;
         }
+
+        //Rainbow Filter
+        public static Bitmap RainbowFilter(this Bitmap sourceBitmap)
+        {
+            Bitmap temp = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
+            int raz = sourceBitmap.Height / 4;
+            for (int i = 0; i < sourceBitmap.Width; i++)
+            {
+                for (int x = 0; x < sourceBitmap.Height; x++)
+                {
+
+                    if (i < (raz))
+                    {
+                        temp.SetPixel(i, x, Color.FromArgb(sourceBitmap.GetPixel(i, x).R / 5, sourceBitmap.GetPixel(i, x).G, sourceBitmap.GetPixel(i, x).B));
+                    }
+                    else if (i < (raz * 2))
+                    {
+                        temp.SetPixel(i, x, Color.FromArgb(sourceBitmap.GetPixel(i, x).R, sourceBitmap.GetPixel(i, x).G / 5, sourceBitmap.GetPixel(i, x).B));
+                    }
+                    else if (i < (raz * 3))
+                    {
+                        temp.SetPixel(i, x, Color.FromArgb(sourceBitmap.GetPixel(i, x).R, sourceBitmap.GetPixel(i, x).G, sourceBitmap.GetPixel(i, x).B / 5));
+                    }
+                    else if (i < (raz * 4))
+                    {
+                        temp.SetPixel(i, x, Color.FromArgb(sourceBitmap.GetPixel(i, x).R / 5, sourceBitmap.GetPixel(i, x).G, sourceBitmap.GetPixel(i, x).B / 5));
+                    }
+                    else
+                    {
+                        temp.SetPixel(i, x, Color.FromArgb(sourceBitmap.GetPixel(i, x).R / 5, sourceBitmap.GetPixel(i, x).G / 5, sourceBitmap.GetPixel(i, x).B / 5));
+                    }
+                }
+
+            }
+            return temp;
+        }
+
+        //apply color filter at your own taste
+        public static Bitmap CustomColorsFilter(this Bitmap sourceBitmap, int alpha, int red, int green, int blue)
+        {
+            Bitmap temp = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
+
+
+            for (int i = 0; i < sourceBitmap.Width; i++)
+            {
+                for (int x = 0; x < sourceBitmap.Height; x++)
+                {
+                    Color c = sourceBitmap.GetPixel(i, x);
+                    Color cLayer = Color.FromArgb(c.A / alpha, c.R / red, c.G / green, c.B / blue);
+                    temp.SetPixel(i, x, cLayer);
+                }
+
+            }
+            return temp;
+        }
+
+        //black and white filter
+        public static Bitmap BlackWhiteFilter(this Bitmap sourceBitmap)
+        {
+            int rgb;
+            Color c;
+
+            for (int y = 0; y < sourceBitmap.Height; y++)
+                for (int x = 0; x < sourceBitmap.Width; x++)
+                {
+                    c = sourceBitmap.GetPixel(x, y);
+                    rgb = (int)((c.R + c.G + c.B) / 3);
+                    sourceBitmap.SetPixel(x, y, Color.FromArgb(rgb, rgb, rgb));
+                }
+            return sourceBitmap;
+        }
+
+        //apply color filter to swap pixel colors
+        public static Bitmap SwapPixelColorsFilter(this Bitmap sourceBitmap)
+        {
+            Bitmap temp = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
+
+
+            for (int i = 0; i < sourceBitmap.Width; i++)
+            {
+                for (int x = 0; x < sourceBitmap.Height; x++)
+                {
+                    Color c = sourceBitmap.GetPixel(i, x);
+                    Color cLayer = Color.FromArgb(c.A, c.G, c.B, c.R);
+                    temp.SetPixel(i, x, cLayer);
+                }
+
+            }
+            return temp;
+        }
+
+        //apply color filter to swap pixel colors
+        public static Bitmap CustomPixelColorsFilter(this Bitmap sourceBitmap, int alpha, int red, int green, int blue)
+        {
+            Bitmap temp = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
+
+
+            for (int i = 0; i < sourceBitmap.Width; i++)
+            {
+                for (int x = 0; x < sourceBitmap.Height; x++)
+                {
+                    Color c = sourceBitmap.GetPixel(i, x);
+                    Color cLayer = Color.FromArgb(c.A / alpha, c.G / green, c.B / blue, c.R / red);
+                    temp.SetPixel(i, x, cLayer);
+                }
+
+            }
+            return temp;
+        }
+
+        public static Bitmap MegaFilter(this Bitmap sourceBitmap, int max, int min, Color co)
+        {
+            Bitmap temp = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
+
+            for (int i = 0; i < sourceBitmap.Width; i++)
+            {
+                for (int x = 0; x < sourceBitmap.Height; x++)
+                {
+
+                    Color c = sourceBitmap.GetPixel(i, x);
+                    if (c.G > min && c.G < max)
+                    {
+                        Color cLayer = Color.White;
+                        temp.SetPixel(i, x, cLayer);
+                    }
+                    else
+                    {
+                        temp.SetPixel(i, x, co);
+                    }
+
+                }
+
+            }
+            return temp;
+        }
+
+        //apply magic mosaic
+        public static Bitmap MagicMosaicFilter(this Bitmap sourceBitmap)
+        {
+            int razX = Convert.ToInt32(sourceBitmap.Width / 3);
+            int razY = Convert.ToInt32(sourceBitmap.Height / 3);
+
+            Bitmap temp = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
+
+
+            for (int i = 0; i < sourceBitmap.Width - 1; i++)
+            {
+                for (int x = 0; x < sourceBitmap.Height - 1; x++)
+                {
+                    if (i < razX && x < razY)
+                    {
+                        temp.SetPixel(i, x, sourceBitmap.GetPixel(i, x));
+                    }
+                    else if (i < (razX * 2) && x < (razY))
+                    {
+                        temp.SetPixel(i, x, sourceBitmap.GetPixel(x, i));
+                    }
+                    else if (i < (razX * 3) && x < (razY))
+                    {
+                        temp.SetPixel(i, x, sourceBitmap.GetPixel(i, x));
+                    }
+                    else if (i < (razX) && x < (razY * 2))
+                    {
+                        temp.SetPixel(i, x, sourceBitmap.GetPixel(x, i));
+                    }
+                    else if (i < (razX) && x < (razY * 3))
+                    {
+                        temp.SetPixel(i, x, sourceBitmap.GetPixel(i, x));
+                    }
+                    else if (i < (razX * 2) && x < (razY * 2))
+                    {
+                        temp.SetPixel(i, x, sourceBitmap.GetPixel(i, x));
+                    }
+                    else if (i < (razX * 4) && x < (razY * 1))
+                    {
+                        temp.SetPixel(i, x, sourceBitmap.GetPixel(i, x));
+                    }
+                    else if (i < (razX * 4) && x < (razY * 2))
+                    {
+                        temp.SetPixel(i, x, sourceBitmap.GetPixel(x / 2, i / 2));
+                    }
+                    else if (i < (razX * 4) && x < (razY * 3))
+                    {
+                        temp.SetPixel(i, x, sourceBitmap.GetPixel(x / 3, i / 3));
+                    }
+
+                }
+
+            }
+            return temp;
+        }
     }  
 }
