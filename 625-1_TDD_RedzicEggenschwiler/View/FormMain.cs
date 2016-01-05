@@ -535,7 +535,118 @@ namespace ImageConversion
 
         }
 
-        
+        private void cmbEdgeDetection_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyEdgeDetectionFilter(true);
+        }
+
+        private void ApplyEdgeDetectionFilter(bool preview)
+        {
+            if (previewBitmap == null || cmbEdgeDetection.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            Bitmap selectedSource = null;
+            Bitmap bitmapResult = null;
+
+            if (preview == true)
+            {
+                selectedSource = previewBitmap;
+            }
+            else
+            {
+                selectedSource = originalBitmap;
+            }
+
+            if (selectedSource != null)
+            {
+                if (cmbEdgeDetection.SelectedItem.ToString() == "None")
+                {
+                    bitmapResult = selectedSource;
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3")
+                {
+                    bitmapResult = selectedSource.Laplacian3x3Filter(false);
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3 Grayscale")
+                {
+                    bitmapResult = selectedSource.Laplacian3x3Filter(true);
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5")
+                {
+                    bitmapResult = selectedSource.Laplacian5x5Filter(false);
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5 Grayscale")
+                {
+                    bitmapResult = selectedSource.Laplacian5x5Filter(true);
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian of Gaussian")
+                {
+                    bitmapResult = selectedSource.LaplacianOfGaussianFilter();
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3 of Gaussian 3x3")
+                {
+                    bitmapResult = selectedSource.Laplacian3x3OfGaussian3x3Filter();
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3 of Gaussian 5x5 - 1")
+                {
+                    bitmapResult = selectedSource.Laplacian3x3OfGaussian5x5Filter1();
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 3x3 of Gaussian 5x5 - 2")
+                {
+                    bitmapResult = selectedSource.Laplacian3x3OfGaussian5x5Filter2();
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5 of Gaussian 3x3")
+                {
+                    bitmapResult = selectedSource.Laplacian5x5OfGaussian3x3Filter();
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5 of Gaussian 5x5 - 1")
+                {
+                    bitmapResult = selectedSource.Laplacian5x5OfGaussian5x5Filter1();
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Laplacian 5x5 of Gaussian 5x5 - 2")
+                {
+                    bitmapResult = selectedSource.Laplacian5x5OfGaussian5x5Filter2();
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Sobel 3x3")
+                {
+                    bitmapResult = selectedSource.Sobel3x3Filter(false);
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Sobel 3x3 Grayscale")
+                {
+                    bitmapResult = selectedSource.Sobel3x3Filter();
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Prewitt")
+                {
+                    bitmapResult = selectedSource.PrewittFilter(false);
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Prewitt Grayscale")
+                {
+                    bitmapResult = selectedSource.PrewittFilter();
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Kirsch")
+                {
+                    bitmapResult = selectedSource.KirschFilter(false);
+                }
+                else if (cmbEdgeDetection.SelectedItem.ToString() == "Kirsch Grayscale")
+                {
+                    bitmapResult = selectedSource.KirschFilter();
+                }
+            }
+
+            if (bitmapResult != null)
+            {
+                if (preview == true)
+                {
+                    pictureBox1.Image = bitmapResult;
+                }
+                else
+                {
+                    resultBitmap = bitmapResult;
+                }
+            }
+        }
 
         
 

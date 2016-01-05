@@ -582,6 +582,7 @@
             this.cmbEdgeDetection.Name = "cmbEdgeDetection";
             this.cmbEdgeDetection.Size = new System.Drawing.Size(275, 24);
             this.cmbEdgeDetection.TabIndex = 48;
+            this.cmbEdgeDetection.SelectedIndexChanged += new System.EventHandler(this.cmbEdgeDetection_SelectedIndexChanged);
             // 
             // FormMain
             // 
