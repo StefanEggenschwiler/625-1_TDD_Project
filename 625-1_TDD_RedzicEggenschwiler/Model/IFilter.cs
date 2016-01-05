@@ -8,5 +8,6 @@ namespace ImageConversion.Model
 {
     interface IFilter
     {
+
     }
 }
