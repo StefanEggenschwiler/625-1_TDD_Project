@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PictureBox.Image.Testes
+namespace ImageConversion
 {
     public partial class FormBrushSize : Form
     {

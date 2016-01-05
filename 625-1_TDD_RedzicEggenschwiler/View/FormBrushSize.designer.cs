@@ -1,4 +1,4 @@
-﻿namespace PictureBox.Image.Testes
+﻿namespace ImageConversion
 {
     partial class FormBrushSize
     {
