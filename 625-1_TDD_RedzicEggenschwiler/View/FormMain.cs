@@ -48,6 +48,8 @@ namespace ImageConversion
          public FormMain()
         {
             InitializeComponent();
+
+            cmbEdgeDetection.SelectedIndex = 0;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -527,6 +529,11 @@ namespace ImageConversion
         }
 
         #endregion
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
 
         
 

@@ -1,9 +1,10 @@
-﻿using System;
+﻿using ImageConversion;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace PictureBox.Image.Testes
+namespace ImageConversion
 {
     static class Program
     {
