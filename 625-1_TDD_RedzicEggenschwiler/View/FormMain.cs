@@ -55,18 +55,12 @@ namespace ImageConversion
         private void Form1_Load(object sender, EventArgs e)
         {
             Origin = pictureBox1.Image;
-            pictureBox2.BackColor = Color.White;
             Bitmap temp = new Bitmap(pictureBox1.Image,
                 new Size(pictureBox1.Width, pictureBox1.Height));
             pictureBox1.Image=temp;
-            Bitmap tempSecond = new Bitmap(pictureBox2.Width,pictureBox2.Height);
-            pictureBox2.Image = tempSecond;
             map = new Bitmap(pictureBox1.Image);
-            mapSecond = new Bitmap(pictureBox2.Image);
             Move = false;
-            checkBox1.Checked = false;
             MouseDown = pictureBox1.CreateGraphics();
-            MouseDownSecond = pictureBox2.CreateGraphics();
             myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
             myBrush2 = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
             SecondPicBrush=Color.Black;
@@ -107,21 +101,6 @@ namespace ImageConversion
 
         #region MACHADO_Behaviours
 
-        private void OnMouseMove_AddToList(int x, int y) 
-        {
-            if (Move)
-            {
-                listBox1.Items.Add(map.GetPixel(x, y).ToString());
-
-                int NumberOfItems = listBox1.ClientSize.Height / listBox1.ItemHeight;
-
-                if (listBox1.TopIndex == listBox1.Items.Count - NumberOfItems - 1)
-                {
-                    listBox1.TopIndex = listBox1.Items.Count - NumberOfItems + 1;
-                }
-            }        
-        }
-
         private void OnMouseMove_Draw(int x, int y)
         {
             if (Selection)
@@ -131,14 +110,6 @@ namespace ImageConversion
             }
         }
 
-        private void OnCheckBoxChanged_ChangeMove()
-        {
-            if (checkBox1.Checked)
-                Move = true;
-            else
-                Move = false;
-        }
-
         private void OnPictureBox1Click(int x, int y)
         {
             label1.Text = map.GetPixel(x, y).ToString();
@@ -146,24 +117,6 @@ namespace ImageConversion
             SelectedPixel = new Point(x, y);
         }
 
-        private void OnListBox1Click_ChangePanel1()
-        {
-            string color = listBox1.SelectedItem.ToString();
-            string[] args = color.Split(',');
-            string a = args[0].Substring(args[0].IndexOf("A") + 2);
-            string r = args[1].Substring(args[1].IndexOf("R") + 2);
-            string g = args[2].Substring(args[2].IndexOf("G") + 2);
-            string b = args[3].Substring(args[3].IndexOf("B") + 2)
-                .Substring(0, args[3].Substring(args[3].IndexOf("B") + 2).IndexOf(']'));
-
-            Color temp = Color.FromArgb(Convert.ToInt32(a),
-                Convert.ToInt32(r), Convert.ToInt32(g),
-                Convert.ToInt32(b));
-
-            panel1.BackColor = temp;
-
-
-        }
 
         private void PaintColor(Color c)
         {
@@ -218,12 +171,6 @@ namespace ImageConversion
             Point[] pointsArray = new Point[points.Count];
             Bitmap MagicSel = new Bitmap(pictureBox1.Width, pictureBox1.Height);
 
-            for (int i = 0; i < points.Count; i++)
-            {
-                pointsArray[i] = new Point(points.ElementAt<Point>(i).X / ((pictureBox1.Width + pictureBox2.Width) / pictureBox2.Width),
-                    points.ElementAt<Point>(i).Y / ((pictureBox1.Height + pictureBox2.Height) / pictureBox2.Height));
-            }
-
 
             if (!string.IsNullOrEmpty(txtB.Text)
                 && !string.IsNullOrEmpty(txtR.Text)
@@ -256,19 +203,8 @@ namespace ImageConversion
             {
                 pictureBox1.Image = FirstState;
             }
-
-
-            if (points.Count > 1)
-            {
-                Graphics gtemp = pictureBox2.CreateGraphics();
-                gtemp.DrawLines(new Pen(br, SecondPicBrushWidth), pointsArray);
-            }
         }
 
-        public void ResetPictureBox2()
-        {
-            pictureBox2.Image = null;
-        }
 
         public void OpenColorDialog()
         {
@@ -309,31 +245,9 @@ namespace ImageConversion
             SecondPicBrushWidth = fs.Size;
         }
 
-        public void OpenChangeColorDialog()
-        {
-            ColorDialog CD = new ColorDialog();
-            CD.ShowDialog();
-            if (CD.Color != null)
-            {
-                Color newC = CD.Color;
-                pictureBox2.BackColor = newC;
-            }
-        }
-
         #endregion
 
         #region MACHADO_Events
-
-        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
-        {
-            OnMouseMove_AddToList(e.X,e.Y);
-            OnMouseMove_Draw(e.X, e.Y);           
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            OnCheckBoxChanged_ChangeMove();
-        }
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
@@ -348,11 +262,6 @@ namespace ImageConversion
         private void button2_Click(object sender, EventArgs e)
         {
             OnButton2Click_ChangePixelColor();
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            OnListBox1Click_ChangePanel1();          
         }
 
         private void btnR_Click(object sender, EventArgs e)
@@ -383,11 +292,6 @@ namespace ImageConversion
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             OnMouseUpOnPictureBox1();
-        }
-        
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ResetPictureBox2();
         }        
 
         private void button4_Click(object sender, EventArgs e)
@@ -413,17 +317,6 @@ namespace ImageConversion
         private void button5_Click(object sender, EventArgs e)
         {
             OpenFormBrushSize();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            Bitmap newBm = new Bitmap(pictureBox2.Width,pictureBox2.Height);
-            pictureBox2.Image = newBm;
-        }
-        
-        private void button7_Click_1(object sender, EventArgs e)
-        {
-            OpenChangeColorDialog();
         }
 
         private void button14_Click(object sender, EventArgs e)
