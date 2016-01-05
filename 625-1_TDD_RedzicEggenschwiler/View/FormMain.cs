@@ -13,7 +13,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 
 
-namespace PictureBox.Image.Testes
+namespace ImageConversion
 {
     public partial class FormMain : Form
     {
@@ -524,6 +524,11 @@ namespace PictureBox.Image.Testes
         }
 
         #endregion
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
 
         
 
