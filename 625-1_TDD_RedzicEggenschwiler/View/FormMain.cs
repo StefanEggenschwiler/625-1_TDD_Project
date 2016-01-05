@@ -236,15 +236,6 @@ namespace ImageConversion
             }
         }
 
-        public void OpenFormBrushSize()
-        {
-            FormBrushSize fs = new FormBrushSize();
-            fs.Size = 1;
-            fs.StartPosition = FormStartPosition.CenterScreen;
-            fs.ShowDialog();
-            SecondPicBrushWidth = fs.Size;
-        }
-
         #endregion
 
         #region MACHADO_Events
@@ -312,11 +303,6 @@ namespace ImageConversion
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
             OnMouseUpOnPictureBox2(); 
-        }         
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            OpenFormBrushSize();
         }
 
         private void button14_Click(object sender, EventArgs e)
