@@ -316,53 +316,61 @@ namespace ImageConversion
 
         private void button8_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             pictureBox1.Image = ImageFilters.DivideCrop(new Bitmap(pictureBox1.Image));
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             pictureBox1.Image = ImageFilters.ApplyFilter(new Bitmap(pictureBox1.Image), 1, 10, 1, 1);
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             pictureBox1.Image = ImageFilters.ApplyFilter(new Bitmap(pictureBox1.Image), 1, 1, 10, 1);
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             pictureBox1.Image = ImageFilters.ApplyFilter(new Bitmap(pictureBox1.Image), 1, 1, 1, 25);
         }
 
         private void button12_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = ImageFilters.ApplyFilter(new Bitmap(pictureBox1.Image), 1, 1, 10, 15);
         }
 
         private void button13_Click(object sender, EventArgs e)
         {
-
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
         }
 
         private void button16_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             pictureBox1.Image = ImageFilters.BlackWhite(new Bitmap(pictureBox1.Image));
         }
 
         private void button15_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             pictureBox1.Image = ImageFilters.ApplyFilterSwap(new Bitmap(pictureBox1.Image));
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             System.Drawing.Image te = ImageFilters.ApplyFilterSwapDivide(new Bitmap(pictureBox1.Image), 1, 1, 2, 1);
             pictureBox1.Image = ImageFilters.ApplyFilterSwap(new Bitmap(te));
@@ -370,6 +378,7 @@ namespace ImageConversion
 
         private void button18_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             Color c = Color.Green;
             pictureBox1.Image = ImageFilters.ApplyFilterMega(new Bitmap(pictureBox1.Image), 230, 110, c);
@@ -377,6 +386,7 @@ namespace ImageConversion
 
         private void button19_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             Color c = Color.Blue;
             pictureBox1.Image = ImageFilters.ApplyFilterMega(new Bitmap(pictureBox1.Image), 230, 110, c);
@@ -384,6 +394,7 @@ namespace ImageConversion
 
         private void button20_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             Color c = Color.Orange;
             pictureBox1.Image = ImageFilters.ApplyFilterMega(new Bitmap(pictureBox1.Image), 230, 110, c);
@@ -391,18 +402,22 @@ namespace ImageConversion
 
         private void button21_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
+            pictureBox1.Image = Origin;
             Color c = Color.Pink;
             pictureBox1.Image = ImageFilters.ApplyFilterMega(new Bitmap(pictureBox1.Image), 230, 110, c);
         }
 
         private void button22_Click(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             pictureBox1.Image = ImageFilters.ApplyFilterMega(new Bitmap(pictureBox1.Image), 230, 110, SecondPicBrush);
         }
 
         private void button19_Click_1(object sender, EventArgs e)
         {
+            resetCmbEdgeDetection();
             pictureBox1.Image = Origin;
             pictureBox1.Image = ImageFilters.RainbowFilter(new Bitmap(pictureBox1.Image));
         }
@@ -425,17 +440,11 @@ namespace ImageConversion
             Bitmap selectedSource = null;
             Bitmap bitmapResult = null;
 
-            if(Origin!=null)
+            if (Origin != null)
             {
                 selectedSource = new Bitmap(Origin);
-            }
-            else
-            {
-                return;
-            }
+                pictureBox1.Image = Origin;
 
-            if (selectedSource != null)
-            {
                 if (cmbEdgeDetection.SelectedItem.ToString() == "None")
                 {
                     bitmapResult = selectedSource;
@@ -509,6 +518,10 @@ namespace ImageConversion
                     bitmapResult = selectedSource.KirschFilter();
                 }
             }
+            else
+            {
+                return;
+            }
 
             if (bitmapResult != null)
             {
@@ -516,9 +529,10 @@ namespace ImageConversion
             }
         }
 
-        
-
-
+        private void resetCmbEdgeDetection()
+        {
+            cmbEdgeDetection.SelectedIndex = 0;
+        }
         
     }
 }
