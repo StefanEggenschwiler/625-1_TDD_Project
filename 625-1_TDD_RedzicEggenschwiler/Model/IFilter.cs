@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ImageConversion.Model
 {
-    interface IFilter
+    public interface IFilter
     {
 
     }

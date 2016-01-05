@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ImageConversion.Controller
 {
-    interface IController
+    public interface IController
     {
         void loadImage();
         void saveImage();
