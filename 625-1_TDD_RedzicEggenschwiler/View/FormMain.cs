@@ -416,26 +416,22 @@ namespace ImageConversion
 
         private void cmbEdgeDetection_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ApplyEdgeDetectionFilter(true);
+            ApplyEdgeDetectionFilter();
         }
 
-        private void ApplyEdgeDetectionFilter(bool preview)
+        private void ApplyEdgeDetectionFilter()
         {
-            if (previewBitmap == null || cmbEdgeDetection.SelectedIndex == -1)
-            {
-                return;
-            }
 
             Bitmap selectedSource = null;
             Bitmap bitmapResult = null;
 
-            if (preview == true)
+            if(Origin!=null)
             {
-                selectedSource = previewBitmap;
+                selectedSource = new Bitmap(Origin);
             }
             else
             {
-                selectedSource = originalBitmap;
+                return;
             }
 
             if (selectedSource != null)
@@ -516,14 +512,7 @@ namespace ImageConversion
 
             if (bitmapResult != null)
             {
-                if (preview == true)
-                {
-                    pictureBox1.Image = bitmapResult;
-                }
-                else
-                {
-                    resultBitmap = bitmapResult;
-                }
+                pictureBox1.Image = bitmapResult;
             }
         }
 
