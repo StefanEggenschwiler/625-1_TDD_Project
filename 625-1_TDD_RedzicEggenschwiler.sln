@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "625-1_TDD_RedzicEggenschwiler", "625-1_TDD_RedzicEggenschwiler\625-1_TDD_RedzicEggenschwiler.csproj", "{1A9516A0-04EE-4011-8E22-D306B29FB1D3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "625-1_TDD_RedzigEggenschwiler_Test", "625-1_TDD_RedzigEggenschwiler_Test\625-1_TDD_RedzigEggenschwiler_Test.csproj", "{9A8B2CA3-2D51-4F32-A7F6-2EFA826F3591}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1A9516A0-04EE-4011-8E22-D306B29FB1D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A9516A0-04EE-4011-8E22-D306B29FB1D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A9516A0-04EE-4011-8E22-D306B29FB1D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A8B2CA3-2D51-4F32-A7F6-2EFA826F3591}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A8B2CA3-2D51-4F32-A7F6-2EFA826F3591}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A8B2CA3-2D51-4F32-A7F6-2EFA826F3591}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A8B2CA3-2D51-4F32-A7F6-2EFA826F3591}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

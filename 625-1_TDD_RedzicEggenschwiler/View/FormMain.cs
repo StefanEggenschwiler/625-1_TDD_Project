@@ -45,8 +45,7 @@ namespace ImageConversion
             map = new Bitmap(pictureBox1.Image);
         }
 
-        #region MACHADO_FileManagement
-
+        #region FileManagement
         public void SaveImage()
         {
             FolderBrowserDialog fl = new FolderBrowserDialog();
@@ -72,11 +71,9 @@ namespace ImageConversion
                 controller.Origin = pictureBox1.Image;
             }
         }
-
         #endregion
 
-        #region MACHADO_Behaviours
-
+        #region Behaviours
         private void OnPictureBox1Click(int x, int y)
         {
             label1.Text = map.GetPixel(x, y).ToString();
@@ -93,11 +90,9 @@ namespace ImageConversion
             controller.Color = Color.FromArgb(controller.Red, controller.Green, controller.Blue);
         }
 
-
         private void PaintColor(Color c)
         {
             panel1.BackColor = c;
-
         }
 
         public void OnButton2Click_ChangePixelColor()
@@ -139,7 +134,6 @@ namespace ImageConversion
             Point[] pointsArray = new Point[points.Count];
             Bitmap MagicSel = new Bitmap(pictureBox1.Width, pictureBox1.Height);
 
-
             if (!string.IsNullOrEmpty(txtB.Text)
                 && !string.IsNullOrEmpty(txtR.Text)
                 && !string.IsNullOrEmpty(txtG.Text)
@@ -176,10 +170,32 @@ namespace ImageConversion
                 controller.Color = Color.FromArgb(controller.Red, controller.Green, controller.Blue);
             }
         }
+
+        private void ApplyEdgeDetectionFilter()
+        {
+            Bitmap selectedSource = null;
+            Bitmap bitmapResult = null;
+
+            if (controller.Origin != null)
+            {
+                selectedSource = new Bitmap(controller.Origin);
+                pictureBox1.Image = controller.Origin;
+
+                bitmapResult = controller.executeFilter(cmbEdgeDetection.SelectedItem.ToString());
+            }
+            else
+            {
+                return;
+            }
+
+            if (bitmapResult != null)
+            {
+                pictureBox1.Image = bitmapResult;
+            }
+        }
         #endregion
 
-        #region MACHADO_Events
-
+        #region Events
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
             OnPictureBox1Click(e.X, e.Y);
@@ -204,36 +220,11 @@ namespace ImageConversion
         {
             SaveImage();
         }
-
-        #endregion
         
         private void cmbEdgeDetection_SelectedIndexChanged(object sender, EventArgs e)
         {
             ApplyEdgeDetectionFilter();
         }
-
-        private void ApplyEdgeDetectionFilter()
-        {
-
-            Bitmap selectedSource = null;
-            Bitmap bitmapResult = null;
-
-            if (controller.Origin != null)
-            {
-                selectedSource = new Bitmap(controller.Origin);
-                pictureBox1.Image = controller.Origin;
-
-                bitmapResult = controller.executeFilter(cmbEdgeDetection.SelectedItem.ToString());
-            }
-            else
-            {
-                return;
-            }
-
-            if (bitmapResult != null)
-            {
-                pictureBox1.Image = bitmapResult;
-            }
-        }
+        #endregion
     }
 }
