@@ -12,12 +12,7 @@ namespace ImageConversion.Model.Filters
         public Laplacian5x5Filter(bool grayscale)
         {
             base.grayscale = grayscale;
-        }
-
-        public Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
-        {
             base.filterMatrix = Matrix.Laplacian5x5;
-            return base.applyFilter(sourceBitmap, red, green, blue, color);
         }
     }
 }

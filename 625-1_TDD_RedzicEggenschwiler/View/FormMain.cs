@@ -60,6 +60,7 @@ namespace ImageConversion
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            controller.Origin = pictureBox1.Image;
             Origin = pictureBox1.Image;
             Bitmap temp = new Bitmap(pictureBox1.Image,
                 new Size(pictureBox1.Width, pictureBox1.Height));
@@ -450,6 +451,8 @@ namespace ImageConversion
             {
                 selectedSource = new Bitmap(Origin);
                 pictureBox1.Image = Origin;
+
+                bitmapResult = controller.executeFilter(cmbEdgeDetection.SelectedItem.ToString());
 
                 if (cmbEdgeDetection.SelectedItem.ToString() == "None")
                 {

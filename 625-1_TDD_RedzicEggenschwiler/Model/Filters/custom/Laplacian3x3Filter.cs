@@ -12,12 +12,7 @@ namespace ImageConversion.Model.Filters
         public Laplacian3x3Filter(bool grayscale)
         {
             base.grayscale = grayscale;
-        }
-
-        public Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
-        {
             base.filterMatrix = Matrix.Laplacian3x3;
-            return base.applyFilter(sourceBitmap, red, green, blue, color);
         }
     }
 }

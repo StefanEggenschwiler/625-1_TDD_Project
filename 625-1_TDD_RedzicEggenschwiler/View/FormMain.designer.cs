@@ -117,7 +117,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(124, 25);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Color Panel";
+            this.label2.Text = "color Panel";
             // 
             // txtR
             // 
@@ -150,7 +150,7 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(126, 94);
             this.button2.TabIndex = 13;
-            this.button2.Text = "Change Selected Pixel Color";
+            this.button2.Text = "Change Selected Pixel color";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

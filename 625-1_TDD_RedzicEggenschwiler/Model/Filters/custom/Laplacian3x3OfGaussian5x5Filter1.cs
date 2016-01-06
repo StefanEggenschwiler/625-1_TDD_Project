@@ -9,7 +9,7 @@ namespace ImageConversion.Model.Filters
 {
     public class Laplacian3x3OfGaussian5x5Filter1 : SingleConvolutionFilter
     {
-        public Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public override Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
         {
             base.factor = 1.0 / 159.0;
             base.grayscale = true;

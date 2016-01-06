@@ -9,11 +9,10 @@ namespace ImageConversion.Model.Filters
 {
     public class LaplacianOfGaussianFilter : SingleConvolutionFilter
     {
-        public Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public LaplacianOfGaussianFilter()
         {
             base.filterMatrix = Matrix.LaplacianOfGaussian;
             base.grayscale = true;
-            return base.applyFilter(sourceBitmap, red, green, blue, color);
         }
     }
 }

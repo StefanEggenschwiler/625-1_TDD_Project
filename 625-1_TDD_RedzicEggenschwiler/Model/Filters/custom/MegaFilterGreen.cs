@@ -9,9 +9,9 @@ namespace ImageConversion.Model.Filters
 {
     public class MegaFilterGreen : MegaFilter
     {
-        public Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public override Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
         {
-            return base.applyFilter(sourceBitmap, red, green, blue, Color.Green);
+            return base.applyFilter(sourceBitmap, 1, 1, 1, Color.Green);
         }
     }
 }
