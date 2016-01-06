@@ -9,6 +9,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Runtime.InteropServices;
+using ImageConversion.DAL;
 
 
 namespace ImageConversion
@@ -20,6 +21,7 @@ namespace ImageConversion
         Bitmap map;
         Point SelectedPixel;
         List<Point> points = new List<Point>();
+        FileAccessHandler fileAccessHandler = new FileAccessHandler();
         #endregion
 
         public FormMain()
@@ -43,31 +45,8 @@ namespace ImageConversion
         }
 
         #region FileManagement
-        public void SaveImage()
-        {
-            FolderBrowserDialog fl = new FolderBrowserDialog();
-            if (fl.ShowDialog() != DialogResult.Cancel)
-            {
 
-                pictureBox1.Image.Save(fl.SelectedPath + @"\" + textBox1.Text + @".png", System.Drawing.Imaging.ImageFormat.Png);
-            };
-        }
 
-        public void LoadImage()
-        {
-            OpenFileDialog op = new OpenFileDialog();
-            DialogResult dr = op.ShowDialog();
-            if (dr == DialogResult.OK)
-            {
-                string path = op.FileName;
-                pictureBox1.Load(path);
-                Bitmap temp = new Bitmap(pictureBox1.Image);
-                pictureBox1.Image = temp;
-                pictureBox1.Size = pictureBox1.Image.Size;
-                map = new Bitmap(pictureBox1.Image);
-                controller.Origin = pictureBox1.Image;
-            }
-        }
         #endregion
 
         #region Behaviours
@@ -200,7 +179,7 @@ namespace ImageConversion
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoadImage();
+            controller.Origin = fileAccessHandler.LoadImage(pictureBox1, map);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -215,7 +194,7 @@ namespace ImageConversion
 
         private void button14_Click(object sender, EventArgs e)
         {
-            SaveImage();
+            fileAccessHandler.SaveImage(pictureBox1.Image, textBox1.Text);
         }
         
         private void cmbEdgeDetection_SelectedIndexChanged(object sender, EventArgs e)
