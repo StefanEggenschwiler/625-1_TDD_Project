@@ -5,7 +5,7 @@ using System.Drawing;
 
 namespace ImageConversion.Model
 {
-    public class FilterController
+    public class FilterController : IFilterController
     {
         public List<String> FilterNames { get { return _filterNames; } }
         public Image Origin { get { return _origin; } set { _origin = value; } }
