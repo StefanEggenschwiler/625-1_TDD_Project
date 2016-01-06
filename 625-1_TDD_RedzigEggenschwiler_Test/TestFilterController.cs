@@ -73,7 +73,19 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         }
 
         [TestMethod]
-        public void TestExecuteFilter()
+        public void TestExecuteFilter1()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
+            Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
+            var controller = Substitute.For<IFilterController>();
+
+            controller.executeFilter("Filter 1").Returns(testImage);
+
+            Assert.AreEqual(controller.executeFilter("Filter 1"), testImage);
+        }
+
+        [TestMethod]
+        public void TestExecuteFilter2()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
             Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
@@ -83,8 +95,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
             controller.executeFilter("Filter 1").Returns(testImage);
             controller.executeFilter("Filter 2").Returns(testImage2);
 
-            Assert.AreEqual(controller.executeFilter("Filter 1"), testImage);
-            Assert.AreNotEqual(controller.executeFilter("Filter 2"), testImage);
+            Assert.AreNotEqual(controller.executeFilter("Filter 1"), testImage2);
         }
     }
 }
