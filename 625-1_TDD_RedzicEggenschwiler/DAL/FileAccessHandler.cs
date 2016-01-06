@@ -11,17 +11,19 @@ namespace ImageConversion.DAL
     public class FileAccessHandler : IFileAccessHandler
     {
 
-        public void SaveImage(System.Drawing.Image image, string name)
+        public Boolean SaveImage(Image image, string name)
         {
             if(image == null){
-                return;
+                return false;
             }
             FolderBrowserDialog fl = new FolderBrowserDialog();
             if (fl.ShowDialog() != DialogResult.Cancel)
             {
 
                 image.Save(fl.SelectedPath + @"\" + name + @".png", System.Drawing.Imaging.ImageFormat.Png);
+                return true;
             };
+            return false;
         }
 
         public System.Drawing.Image LoadImage(PictureBox pictureBox, System.Drawing.Bitmap map)
