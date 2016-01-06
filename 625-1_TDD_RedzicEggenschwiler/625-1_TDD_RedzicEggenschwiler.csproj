@@ -65,6 +65,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\FileAccessHandler.cs" />
+    <Compile Include="DAL\IFileAccessHandler.cs" />
     <Compile Include="Model\FilterController.cs" />
     <Compile Include="Model\Filters\custom\ColorFilterCrazy.cs" />
     <Compile Include="Model\Filters\custom\ColorFilterHell.cs" />
