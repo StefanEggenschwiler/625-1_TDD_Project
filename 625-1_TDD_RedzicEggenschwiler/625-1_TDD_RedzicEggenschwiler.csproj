@@ -80,6 +80,7 @@
     <Compile Include="Model\Filters\default\MegaFilter.cs" />
     <Compile Include="Model\Filters\default\RainbowFilter.cs" />
     <Compile Include="Model\IFilter.cs" />
+    <Compile Include="Model\IFilterController.cs" />
     <Compile Include="Model\Matrix.cs" />
     <Compile Include="View\FormMain.cs">
       <SubType>Form</SubType>
