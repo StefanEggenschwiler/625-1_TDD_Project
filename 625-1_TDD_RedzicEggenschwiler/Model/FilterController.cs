@@ -28,6 +28,9 @@ namespace ImageConversion.Model
         {
             initializeFilters();
             _filterNames.AddRange(_filters.Keys);
+            _filterNames.Remove("None");
+            _filterNames.Sort();
+            _filterNames.Insert(0, "None");
         }
 
         private void initializeFilters()
