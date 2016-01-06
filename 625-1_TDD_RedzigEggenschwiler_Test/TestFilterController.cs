@@ -1,4 +1,6 @@
 ﻿using System;
+using NSubstitute;
+using ImageConversion.Model;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace _625_1_TDD_RedzigEggenschwiler_Test
@@ -9,7 +11,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         [TestMethod]
         public void TestMethod1()
         {
-
+            FilterController controller = Substitute.For<IFilterController>();
         }
     }
 }
