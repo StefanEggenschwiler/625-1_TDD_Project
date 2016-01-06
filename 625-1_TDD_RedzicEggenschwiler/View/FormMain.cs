@@ -28,7 +28,8 @@ namespace ImageConversion
         public FormMain()
         {
             InitializeComponent();
-
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoSize = true;
             controller = new FilterController();
             cmbEdgeDetection.Items.AddRange(controller.FilterNames.ToArray());           
 
@@ -38,9 +39,9 @@ namespace ImageConversion
         private void Form1_Load(object sender, EventArgs e)
         {
             controller.Origin = pictureBox1.Image;
-            Bitmap temp = new Bitmap(pictureBox1.Image,
-                new Size(pictureBox1.Width, pictureBox1.Height));
+            Bitmap temp = new Bitmap(pictureBox1.Image);
             pictureBox1.Image = temp;
+            pictureBox1.Size = pictureBox1.Image.Size;
             map = new Bitmap(pictureBox1.Image);
         }
 
@@ -48,14 +49,12 @@ namespace ImageConversion
 
         public void SaveImage()
         {
-            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
             FolderBrowserDialog fl = new FolderBrowserDialog();
             if (fl.ShowDialog() != DialogResult.Cancel)
             {
 
                 pictureBox1.Image.Save(fl.SelectedPath + @"\" + textBox1.Text + @".png", System.Drawing.Imaging.ImageFormat.Png);
             };
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         public void LoadImage()
@@ -66,9 +65,9 @@ namespace ImageConversion
             {
                 string path = op.FileName;
                 pictureBox1.Load(path);
-                Bitmap temp = new Bitmap(pictureBox1.Image,
-                   new Size(pictureBox1.Width, pictureBox1.Height));
+                Bitmap temp = new Bitmap(pictureBox1.Image);
                 pictureBox1.Image = temp;
+                pictureBox1.Size = pictureBox1.Image.Size;
                 map = new Bitmap(pictureBox1.Image);
                 controller.Origin = pictureBox1.Image;
             }

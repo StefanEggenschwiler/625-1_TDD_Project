@@ -11,7 +11,8 @@ namespace ImageConversion.Model.Filters
     {
         public override Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color)
         {
-            Bitmap temp = base.applyFilter(sourceBitmap, 1, 1, 1, 2, color);
+            base.Swap = true;
+            Bitmap temp = base.applyFilter(sourceBitmap, 1, 1, 2, 1, color);
             return base.applyFilter(temp, 1, 1, 1, 1, color);
         }
     }
