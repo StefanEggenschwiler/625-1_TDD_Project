@@ -9,17 +9,17 @@ namespace ImageConversion.Model.Filters
 {
     public class Laplacian3x3OfGaussian5x5Filter2 : SingleConvolutionFilter
     {
-        public override Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public override Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color)
         {
             base.factor = 1.0 / 256.0;
             base.grayscale = true;
             base.filterMatrix = Matrix.Gaussian5x5Type2;
-            Bitmap tmp = base.applyFilter(sourceBitmap, red, green, blue, color);
+            Bitmap tmp = base.applyFilter(sourceBitmap, alpha, red, green, blue, color);
 
             base.factor = 1.0;
             base.grayscale = false;
             base.filterMatrix = Matrix.Laplacian3x3;
-            return base.applyFilter(tmp, red, green, blue, color);
+            return base.applyFilter(tmp, alpha, red, green, blue, color);
         }
     }
 }

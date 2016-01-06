@@ -9,6 +9,7 @@ namespace ImageConversion.Model
     {
         public List<String> FilterNames { get { return _filterNames; } }
         public Image Origin { get { return _origin; } set { _origin = value; } }
+        public int Alpha { get { return _alpha; } set { _alpha = value; } }
         public int Red { get { return _red;} set { _red = value; } }
         public int Green { get { return _green;} set { _green = value; } }
         public int Blue { get { return _blue;} set { _blue = value; } }
@@ -17,10 +18,11 @@ namespace ImageConversion.Model
         private Dictionary<String, IFilter> _filters;
         private List<String> _filterNames = new List<String>();
         private Image _origin;
-        private int _red;
-        private int _green;
-        private int _blue;
-        private Color _color;
+        private int _alpha = 0;
+        private int _red = 0;
+        private int _green = 0;
+        private int _blue = 0;
+        private Color _color = new Color();
 
         public FilterController()
         {
@@ -70,7 +72,7 @@ namespace ImageConversion.Model
         {
             IFilter temp;
             _filters.TryGetValue(filterName, out temp);
-            return temp.applyFilter(new Bitmap(_origin), _red, _green, _blue, _color);
+            return temp.applyFilter(new Bitmap(_origin), _alpha, _red, _green, _blue, _color);
         }
     }
 }

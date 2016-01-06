@@ -62,7 +62,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\ExtBitmap.cs" />
     <Compile Include="Model\FilterController.cs" />
     <Compile Include="Model\Filters\custom\ColorFilterCrazy.cs" />
     <Compile Include="Model\Filters\custom\ColorFilterHell.cs" />
@@ -102,7 +101,6 @@
     <Compile Include="View\FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ImageFilters.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="View\FormMain.resx">

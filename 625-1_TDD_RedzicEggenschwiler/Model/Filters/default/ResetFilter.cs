@@ -9,7 +9,7 @@ namespace ImageConversion.Model.Filters
 {
     public class ResetFilter : IFilter
     {
-        public Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color)
         {
             return sourceBitmap;
         }

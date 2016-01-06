@@ -9,7 +9,7 @@ namespace ImageConversion.Model.Filters
 {
     public class RainbowFilter : IFilter
     {
-        public Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color)
         {
             Bitmap temp = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
             int raz = sourceBitmap.Height / 4;

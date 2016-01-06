@@ -9,9 +9,9 @@ namespace ImageConversion.Model.Filters
 {
     public class ColorFilterZen : ColorFilter
     {
-        public override Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public override Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color)
         {
-            return base.applyFilter(sourceBitmap, 10, 1, 1, color);
+            return base.applyFilter(sourceBitmap, 1, 10, 1, 1, color);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace ImageConversion.Model.Filters
         protected int bias = 0;
         protected bool grayscale = false;
 
-        public virtual Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public virtual Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color)
         {
             BitmapData sourceData = sourceBitmap.LockBits(new Rectangle(0, 0,
                                      sourceBitmap.Width, sourceBitmap.Height),

@@ -9,7 +9,7 @@ namespace ImageConversion.Model.Filters
 {
     public class MagicMosaicFilter : IFilter
     {
-        public Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color)
         {
             int razX = Convert.ToInt32(sourceBitmap.Width / 3);
             int razY = Convert.ToInt32(sourceBitmap.Height / 3);

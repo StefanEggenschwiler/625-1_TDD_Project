@@ -9,10 +9,9 @@ namespace ImageConversion.Model.Filters
 {
     public class ColorFilter : IFilter
     {
-        protected int Alpha = 1;
         protected bool Swap = false;
 
-        public virtual Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public virtual Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color)
         {
             Bitmap temp = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
 
@@ -24,11 +23,11 @@ namespace ImageConversion.Model.Filters
                     Color cLayer;
                     if (Swap)
                     {
-                        cLayer = Color.FromArgb(c.A / Alpha, c.G / green, c.B / blue, c.R / red);
+                        cLayer = Color.FromArgb(c.A / alpha, c.G / green, c.B / blue, c.R / red);
                     }
                     else
                     {
-                        cLayer = Color.FromArgb(c.A / Alpha, c.R / red, c.G / green, c.B / blue);
+                        cLayer = Color.FromArgb(c.A / alpha, c.R / red, c.G / green, c.B / blue);
                     }
                     temp.SetPixel(i, x, cLayer);
                 }

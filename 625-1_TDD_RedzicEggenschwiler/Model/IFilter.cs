@@ -9,6 +9,6 @@ namespace ImageConversion.Model
 {
     public interface IFilter
     {
-        Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color);
+        Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color);
     }
 }

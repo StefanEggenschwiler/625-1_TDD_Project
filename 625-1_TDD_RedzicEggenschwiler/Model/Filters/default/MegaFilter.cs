@@ -12,7 +12,7 @@ namespace ImageConversion.Model.Filters
         protected int Min = 110;
         protected int Max = 230;
 
-        public virtual Bitmap applyFilter(Bitmap sourceBitmap, int red, int green, int blue, Color color)
+        public virtual Bitmap applyFilter(Bitmap sourceBitmap, int alpha, int red, int green, int blue, Color color)
         {
             Bitmap temp = new Bitmap(sourceBitmap.Width, sourceBitmap.Height);
 
@@ -20,7 +20,6 @@ namespace ImageConversion.Model.Filters
             {
                 for (int x = 0; x < sourceBitmap.Height; x++)
                 {
-
                     Color c = sourceBitmap.GetPixel(i, x);
                     if (c.G > Min && c.G < Max)
                     {
@@ -31,9 +30,7 @@ namespace ImageConversion.Model.Filters
                     {
                         temp.SetPixel(i, x, color);
                     }
-
                 }
-
             }
             return temp;
         }
