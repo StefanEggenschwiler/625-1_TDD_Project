@@ -125,7 +125,6 @@ namespace ImageConversion
         //apply color filter to swap pixel colors
         public static Bitmap ApplyFilterMega(Bitmap bmp, int max, int min, Color co)
         {
-
             Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
 
             for (int i = 0; i < bmp.Width; i++)
@@ -143,7 +142,6 @@ namespace ImageConversion
                     {
                         temp.SetPixel(i, x, co);
                     }
-
                 }
 
             }
@@ -157,7 +155,6 @@ namespace ImageConversion
             int razY = Convert.ToInt32(bmp.Height / 3);
 
             Bitmap temp = new Bitmap(bmp.Width, bmp.Height);
-
 
             for (int i = 0; i < bmp.Width - 1; i++)
             {
@@ -199,14 +196,9 @@ namespace ImageConversion
                     {
                         temp.SetPixel(i, x, bmp.GetPixel(x / 3, i / 3));
                     }
-
                 }
-
             }
             return temp;
         }
-
     }
-
-
 }

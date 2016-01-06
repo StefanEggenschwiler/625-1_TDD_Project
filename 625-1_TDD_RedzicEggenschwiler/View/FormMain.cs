@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ImageConversion.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,36 +19,41 @@ namespace ImageConversion
     public partial class FormMain : Form
     {
         #region MACHADO_Atributes
+        FilterController controller;
         Bitmap map;
         Bitmap mapSecond;
-        Boolean Move=false;
-        Boolean Selection=false;
-        Boolean SelectionSecond = false;  
+        Boolean Move = false;
+        Boolean Selection = false;
+        Boolean SelectionSecond = false;
         Point SelectedPixel;
         List<Point> points = new List<Point>();
         List<Point> pointsSecond = new List<Point>();
         Graphics MouseDown;
         Graphics MouseDownSecond;
-         System.Drawing.SolidBrush myBrush;
-         System.Drawing.SolidBrush myBrush2;
-         System.Drawing.Image Origin;
-         System.Drawing.Image FirstState;
-         System.Drawing.Image FirstStateSecond;       
-         Color SecondPicBrush;
-         int SecondPicBrushWidth;
-         private Capture _capture;
-         private HaarCascade _face;
-         Cross2DF cross;
-         Point Current;
-         Point[] p = new Point[8];
-         private Bitmap originalBitmap = null;
-         private Bitmap previewBitmap = null;
-         private Bitmap resultBitmap = null;
+        System.Drawing.SolidBrush myBrush;
+        System.Drawing.SolidBrush myBrush2;
+        System.Drawing.Image Origin;
+        System.Drawing.Image FirstState;
+        System.Drawing.Image FirstStateSecond;
+        Color SecondPicBrush;
+        int SecondPicBrushWidth;
+        private Capture _capture;
+        private HaarCascade _face;
+        Cross2DF cross;
+        Point Current;
+        Point[] p = new Point[8];
+        private Bitmap originalBitmap = null;
+        private Bitmap previewBitmap = null;
+        private Bitmap resultBitmap = null;
+        private List<String> filterNames = new List<String>();
         #endregion
 
-         public FormMain()
+        public FormMain()
         {
             InitializeComponent();
+
+            controller = new FilterController();
+            cmbEdgeDetection.Items.AddRange(controller.FilterNames.ToArray());           
 
             cmbEdgeDetection.SelectedIndex = 0;
         }
@@ -57,13 +63,13 @@ namespace ImageConversion
             Origin = pictureBox1.Image;
             Bitmap temp = new Bitmap(pictureBox1.Image,
                 new Size(pictureBox1.Width, pictureBox1.Height));
-            pictureBox1.Image=temp;
+            pictureBox1.Image = temp;
             map = new Bitmap(pictureBox1.Image);
             Move = false;
             MouseDown = pictureBox1.CreateGraphics();
             myBrush = new System.Drawing.SolidBrush(System.Drawing.Color.Red);
             myBrush2 = new System.Drawing.SolidBrush(System.Drawing.Color.Black);
-            SecondPicBrush=Color.Black;
+            SecondPicBrush = Color.Black;
             SecondPicBrushWidth = 3;
         }
 
@@ -218,16 +224,16 @@ namespace ImageConversion
         {
             SelectionSecond = true;
             MouseDownSecond.FillEllipse(myBrush, x, y, 1, 1);
-          
+
         }
 
         public void OnMouseUpOnPictureBox2()
         {
             SelectionSecond = false;
-            
+
         }
 
-        public void OnMouseMoveOnPictureBox2(int x,int y)
+        public void OnMouseMoveOnPictureBox2(int x, int y)
         {
             Brush br = new System.Drawing.SolidBrush(SecondPicBrush);
             if (SelectionSecond)
@@ -242,12 +248,12 @@ namespace ImageConversion
 
         private void pictureBox1_MouseClick(object sender, MouseEventArgs e)
         {
-            OnPictureBox1Click(e.X,e.Y);            
-        }        
+            OnPictureBox1Click(e.X, e.Y);
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoadImage();            
+            LoadImage();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -257,33 +263,33 @@ namespace ImageConversion
 
         private void btnR_Click(object sender, EventArgs e)
         {
-            MovePictureBoxPosition(1,0);            
+            MovePictureBoxPosition(1, 0);
         }
 
         private void btnL_Click(object sender, EventArgs e)
         {
-            MovePictureBoxPosition(-1, 0);               
+            MovePictureBoxPosition(-1, 0);
         }
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            MovePictureBoxPosition(0, -1);   
+            MovePictureBoxPosition(0, -1);
         }
 
         private void btnD_Click(object sender, EventArgs e)
         {
-            MovePictureBoxPosition(0, 1);   
-        }        
+            MovePictureBoxPosition(0, 1);
+        }
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            OnMouseDownOnPictureBox1(e.X,e.Y);
+            OnMouseDownOnPictureBox1(e.X, e.Y);
         }
-        
+
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             OnMouseUpOnPictureBox1();
-        }        
+        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -291,18 +297,18 @@ namespace ImageConversion
         }
 
         private void pictureBox2_MouseDown(object sender, MouseEventArgs e)
-        {           
-            OnMouseDownOnPictureBox2(e.X,e.Y);
-        }        
+        {
+            OnMouseDownOnPictureBox2(e.X, e.Y);
+        }
 
         private void pictureBox2_MouseMove(object sender, MouseEventArgs e)
         {
-            OnMouseMoveOnPictureBox2(e.X,e.Y);
-        }       
+            OnMouseMoveOnPictureBox2(e.X, e.Y);
+        }
 
         private void pictureBox2_MouseUp(object sender, MouseEventArgs e)
         {
-            OnMouseUpOnPictureBox2(); 
+            OnMouseUpOnPictureBox2();
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -533,6 +539,6 @@ namespace ImageConversion
         {
             cmbEdgeDetection.SelectedIndex = 0;
         }
-        
+
     }
 }
