@@ -194,7 +194,11 @@ namespace ImageConversion
 
         private void button14_Click(object sender, EventArgs e)
         {
-            fileAccessHandler.SaveImage(pictureBox1.Image, textBox1.Text);
+            FolderBrowserDialog fl = new FolderBrowserDialog();
+            if (fl.ShowDialog() != DialogResult.Cancel)
+            {
+                fileAccessHandler.SaveImage(pictureBox1.Image, textBox1.Text, fl.SelectedPath);
+            }
         }
         
         private void cmbEdgeDetection_SelectedIndexChanged(object sender, EventArgs e)

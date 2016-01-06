@@ -37,8 +37,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
             Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
 
             var fileAccessHandler = Substitute.For<IFileAccessHandler>();
-            fileAccessHandler.SaveImage(testImage, "test").Returns(true);
-            Assert.AreEqual(true, fileAccessHandler.SaveImage(testImage, "test"));
+            Assert.AreEqual(false, fileAccessHandler.SaveImage(testImage, "test", "C:/"));
         }
     }
 }

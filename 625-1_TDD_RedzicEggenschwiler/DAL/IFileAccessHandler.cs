@@ -11,6 +11,6 @@ namespace ImageConversion.DAL
     public interface IFileAccessHandler
     {
         Image LoadImage(PictureBox pictureBox, Bitmap map);
-        Boolean SaveImage(Image image, string name);
+        Boolean SaveImage(Image image, string name, string path);
     }
 }
