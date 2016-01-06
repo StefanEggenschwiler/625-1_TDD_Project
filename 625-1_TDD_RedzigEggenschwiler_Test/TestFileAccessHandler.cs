@@ -35,9 +35,9 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
             Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
-
-            var fileAccessHandler = Substitute.For<IFileAccessHandler>();
-            Assert.AreEqual(false, fileAccessHandler.SaveImage(testImage, "test", "C:/"));
+            FileAccessHandler fileAccessHandler = new FileAccessHandler();
+            string path = System.IO.Directory.GetCurrentDirectory();
+            Assert.AreEqual(true, fileAccessHandler.SaveImage(testImage, "test", path));
         }
     }
 }

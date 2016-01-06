@@ -194,10 +194,17 @@ namespace ImageConversion
 
         private void button14_Click(object sender, EventArgs e)
         {
-            FolderBrowserDialog fl = new FolderBrowserDialog();
-            if (fl.ShowDialog() != DialogResult.Cancel)
+            if (textBox1.Text == "")
             {
-                fileAccessHandler.SaveImage(pictureBox1.Image, textBox1.Text, fl.SelectedPath);
+                MessageBox.Show("Enter a name for your image");
+            }
+            else
+            {
+                FolderBrowserDialog fl = new FolderBrowserDialog();
+                if (fl.ShowDialog() != DialogResult.Cancel)
+                {
+                    fileAccessHandler.SaveImage(pictureBox1.Image, textBox1.Text, fl.SelectedPath);
+                }
             }
         }
         
