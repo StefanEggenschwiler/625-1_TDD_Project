@@ -118,7 +118,100 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="testImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>Resources\cat_portrait.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="testImageBlackWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageBlackWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageCrazy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageCrazy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageHell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageHell.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageKirsch3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageKirsch3x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageKirsch3x3Grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageKirsch3x3Grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian3x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian3x3Grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian3x3Grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian3x3OfGaussian3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian3x3OfGaussian3x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian3x3OfGaussian5x5Filter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian3x3OfGaussian5x5Filter1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian3x3OfGaussian5x5Filter2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian3x3OfGaussian5x5Filter2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian5x5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian5x5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian5x5Grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian5x5Grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian5x5OfGaussian3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian5x5OfGaussian3x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian5x5OfGaussian5x5Filter1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian5x5OfGaussian5x5Filter1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacian5x5OfGaussian5x5Filter2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacian5x5OfGaussian5x5Filter2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageLaplacianOfGaussian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageLaplacianOfGaussian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageMagicMosaic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageMagicMosaic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageMegaFilterBlue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageMegaFilterBlue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageMegaFilterCustom" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageMegaFilterCustom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageMegaFilterGreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageMegaFilterGreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageMegaFilterOrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageMegaFilterOrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageMegaFilterPink" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageMegaFilterPink.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageMiami" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageMiami.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageNight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageNight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageOrigin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageOrigin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImagePrewitt3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImagePrewitt3x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImagePrewitt3x3Grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImagePrewitt3x3Grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageRainbow" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageRainbow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageSobel3x3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageSobel3x3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageSobel3x3Grayscale" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageSobel3x3Grayscale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageSwap" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageSwap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="testImageZen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\testImageZen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -16,12 +16,12 @@ namespace ImageConversion
 {
     public partial class FormMain : Form
     {
-        #region MACHADO_Atributes
+        #region Attributes
         FilterController controller;
+        FileAccessHandler fileAccessHandler;
         Bitmap map;
         Point SelectedPixel;
         List<Point> points = new List<Point>();
-        FileAccessHandler fileAccessHandler = new FileAccessHandler();
         #endregion
 
         public FormMain()
@@ -30,8 +30,9 @@ namespace ImageConversion
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             controller = new FilterController();
-            cmbEdgeDetection.Items.AddRange(controller.FilterNames.ToArray());           
+            fileAccessHandler = new FileAccessHandler();
 
+            cmbEdgeDetection.Items.AddRange(controller.FilterNames.ToArray());
             cmbEdgeDetection.SelectedIndex = 0;
         }
 
@@ -43,11 +44,6 @@ namespace ImageConversion
             pictureBox1.Size = pictureBox1.Image.Size;
             map = new Bitmap(pictureBox1.Image);
         }
-
-        #region FileManagement
-
-
-        #endregion
 
         #region Behaviours
         private void OnPictureBox1Click(int x, int y)
