@@ -7,6 +7,7 @@ namespace ImageConversion.Model
 {
     public class FilterController : IFilterController
     {
+        #region Properties
         public List<String> FilterNames { get { return _filterNames; } }
         public Image Origin { get { return _origin; } set { _origin = value; } }
         public int Alpha { get { return _alpha; } set { _alpha = value; } }
@@ -14,7 +15,9 @@ namespace ImageConversion.Model
         public int Green { get { return _green;} set { _green = value; } }
         public int Blue { get { return _blue;} set { _blue = value; } }
         public Color Color { get { return _color; } set { _color = value; } }
+        #endregion
 
+        #region Private Attributes
         private Dictionary<String, IFilter> _filters;
         private List<String> _filterNames = new List<String>();
         private Image _origin;
@@ -23,6 +26,7 @@ namespace ImageConversion.Model
         private int _green = 0;
         private int _blue = 0;
         private Color _color = new Color();
+        #endregion
 
         public FilterController()
         {
@@ -33,6 +37,31 @@ namespace ImageConversion.Model
             _filterNames.Insert(0, "None");
         }
 
+        #region Methods
+        // Called by the MainForm if the user choses a filter in the dropdown list.
+        // Executes the filter and return the generated bitmap back to the MainForm.
+        public Bitmap executeFilter(String filterName)
+        {
+            IFilter temp;
+            _filters.TryGetValue(filterName, out temp);
+            return temp.applyFilter(new Bitmap(_origin), _alpha, _red, _green, _blue, _color);
+        }
+
+        // Used for adding a new filter
+        public void addFilter(String filterName, IFilter filter)
+        {
+            _filters.Add(filterName, filter);
+
+            _filterNames.AddRange(_filters.Keys);
+            _filterNames.Remove("None");
+            _filterNames.Sort();
+            _filterNames.Insert(0, "None");
+        }
+        #endregion
+
+        #region Private Functions
+        // Here we initialize the dictionary and populate it with all filters
+        // that were already used in both solutions.
         private void initializeFilters()
         {
             _filters = new Dictionary<String, IFilter>();
@@ -70,22 +99,6 @@ namespace ImageConversion.Model
             _filters.Add("Kirsch", new Kirsch3x3Filter(false));
             _filters.Add("Kirsch Grayscale", new Kirsch3x3Filter(true));
         }
-
-        public Bitmap executeFilter(String filterName)
-        {
-            IFilter temp;
-            _filters.TryGetValue(filterName, out temp);
-            return temp.applyFilter(new Bitmap(_origin), _alpha, _red, _green, _blue, _color);
-        }
-
-        public void addFilter(String filterName, IFilter filter)
-        {
-            _filters.Add(filterName, filter);
-
-            _filterNames.AddRange(_filters.Keys);
-            _filterNames.Remove("None");
-            _filterNames.Sort();
-            _filterNames.Insert(0, "None");
-        }
+        #endregion
     }
 }

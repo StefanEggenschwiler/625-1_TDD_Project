@@ -16,7 +16,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         {
             // Load image from Resource file.
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
-            Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
+            Image testImage = ((System.Drawing.Image)(resources.GetObject("testImageOrigin")));
             FilterController controller = new FilterController();
 
             controller.Origin = testImage;
@@ -113,7 +113,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         {
             // We receive the testImage from Resource file.
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
-            Bitmap testImage = new Bitmap(((System.Drawing.Image)(resources.GetObject("testImage"))));
+            Bitmap testImage = new Bitmap(((System.Drawing.Image)(resources.GetObject("testImageOrigin"))));
 
             FilterController controller = new FilterController();
             controller.Origin = testImage;
@@ -139,14 +139,26 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         {
             // We receive the testImage from Resource file.
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
-            Bitmap testImage = new Bitmap(((System.Drawing.Image)(resources.GetObject("testImage"))));
+            Bitmap testImage = new Bitmap(((System.Drawing.Image)(resources.GetObject("testImageOrigin"))));
             String filterName = "None";
 
             FilterController controller = new FilterController();
             controller.Origin = testImage;
 
             // We check if the resulted image is equal to the testImage
-            Assert.AreEqual(testImage.ToString(), controller.executeFilter(filterName).ToString());
+            bool equal = true;
+            for (int x = 0; x < testImage.Width; x++)
+            {
+                for (int y = 0; y < testImage.Height; y++)
+                {
+                    if (testImage.GetPixel(x, y) != ((Bitmap)controller.Origin).GetPixel(x, y))
+                    {
+                        equal = false;
+                    }
+                }
+            }
+
+            Assert.IsTrue(equal);
         }
 
         [TestMethod]
@@ -154,7 +166,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         {
             // We receive the testImage from Resource file.
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
-            Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
+            Image testImage = ((System.Drawing.Image)(resources.GetObject("testImageOrigin")));
             var controller = Substitute.For<IFilterController>();
 
             controller.executeFilter("Filter 1").Returns(testImage);

@@ -19,7 +19,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         {
             //load test image
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
-            Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
+            Image testImage = ((System.Drawing.Image)(resources.GetObject("testImageOrigin")));
             //create test components
             PictureBox pb = new PictureBox();
             pb.Image = testImage;
@@ -34,7 +34,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         public void TestSaveImage()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
-            Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
+            Image testImage = ((System.Drawing.Image)(resources.GetObject("testImageOrigin")));
             FileAccessHandler fileAccessHandler = new FileAccessHandler();
             string path = System.IO.Directory.GetCurrentDirectory();
             Assert.AreEqual(true, fileAccessHandler.SaveImage(testImage, "test", path));

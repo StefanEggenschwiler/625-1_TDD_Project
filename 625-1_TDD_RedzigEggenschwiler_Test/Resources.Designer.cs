@@ -63,9 +63,319 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap testImage {
+        internal static System.Drawing.Bitmap testImageBlackWhite {
             get {
-                object obj = ResourceManager.GetObject("testImage", resourceCulture);
+                object obj = ResourceManager.GetObject("testImageBlackWhite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageCrazy {
+            get {
+                object obj = ResourceManager.GetObject("testImageCrazy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageHell {
+            get {
+                object obj = ResourceManager.GetObject("testImageHell", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageKirsch3x3 {
+            get {
+                object obj = ResourceManager.GetObject("testImageKirsch3x3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageKirsch3x3Grayscale {
+            get {
+                object obj = ResourceManager.GetObject("testImageKirsch3x3Grayscale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian3x3 {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian3x3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian3x3Grayscale {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian3x3Grayscale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian3x3OfGaussian3x3 {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian3x3OfGaussian3x3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian3x3OfGaussian5x5Filter1 {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian3x3OfGaussian5x5Filter1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian3x3OfGaussian5x5Filter2 {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian3x3OfGaussian5x5Filter2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian5x5 {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian5x5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian5x5Grayscale {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian5x5Grayscale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian5x5OfGaussian3x3 {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian5x5OfGaussian3x3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian5x5OfGaussian5x5Filter1 {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian5x5OfGaussian5x5Filter1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacian5x5OfGaussian5x5Filter2 {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacian5x5OfGaussian5x5Filter2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageLaplacianOfGaussian {
+            get {
+                object obj = ResourceManager.GetObject("testImageLaplacianOfGaussian", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageMagicMosaic {
+            get {
+                object obj = ResourceManager.GetObject("testImageMagicMosaic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageMegaFilterBlue {
+            get {
+                object obj = ResourceManager.GetObject("testImageMegaFilterBlue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageMegaFilterCustom {
+            get {
+                object obj = ResourceManager.GetObject("testImageMegaFilterCustom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageMegaFilterGreen {
+            get {
+                object obj = ResourceManager.GetObject("testImageMegaFilterGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageMegaFilterOrange {
+            get {
+                object obj = ResourceManager.GetObject("testImageMegaFilterOrange", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageMegaFilterPink {
+            get {
+                object obj = ResourceManager.GetObject("testImageMegaFilterPink", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageMiami {
+            get {
+                object obj = ResourceManager.GetObject("testImageMiami", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageNight {
+            get {
+                object obj = ResourceManager.GetObject("testImageNight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageOrigin {
+            get {
+                object obj = ResourceManager.GetObject("testImageOrigin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImagePrewitt3x3 {
+            get {
+                object obj = ResourceManager.GetObject("testImagePrewitt3x3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImagePrewitt3x3Grayscale {
+            get {
+                object obj = ResourceManager.GetObject("testImagePrewitt3x3Grayscale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageRainbow {
+            get {
+                object obj = ResourceManager.GetObject("testImageRainbow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageSobel3x3 {
+            get {
+                object obj = ResourceManager.GetObject("testImageSobel3x3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageSobel3x3Grayscale {
+            get {
+                object obj = ResourceManager.GetObject("testImageSobel3x3Grayscale", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageSwap {
+            get {
+                object obj = ResourceManager.GetObject("testImageSwap", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap testImageZen {
+            get {
+                object obj = ResourceManager.GetObject("testImageZen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

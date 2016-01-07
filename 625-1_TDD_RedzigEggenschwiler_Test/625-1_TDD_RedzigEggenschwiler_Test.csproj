@@ -63,6 +63,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TestFilters.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -80,7 +81,100 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cat_portrait.jpg" />
+    <None Include="Resources\testImageCrazy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageOrigin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageHell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageMiami.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageNight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageSwap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageZen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageKirsch3x3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageKirsch3x3Grayscale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian3x3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian3x3Grayscale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian3x3OfGaussian3x3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian3x3OfGaussian5x5Filter1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian3x3OfGaussian5x5Filter2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian5x5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian5x5Grayscale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian5x5OfGaussian3x3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian5x5OfGaussian5x5Filter1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacian5x5OfGaussian5x5Filter2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageLaplacianOfGaussian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageMagicMosaic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageMegaFilterBlue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageMegaFilterCustom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageMegaFilterGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageMegaFilterOrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageMegaFilterPink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImagePrewitt3x3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImagePrewitt3x3Grayscale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageRainbow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageSobel3x3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageSobel3x3Grayscale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\testImageBlackWhite.png" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
