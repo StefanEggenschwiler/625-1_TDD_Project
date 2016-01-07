@@ -176,6 +176,8 @@ namespace ImageConversion
         private void button1_Click(object sender, EventArgs e)
         {
             controller.Origin = fileAccessHandler.LoadImage(pictureBox1, map);
+            pictureBox1.Image = controller.Origin;
+            map = new Bitmap(pictureBox1.Image);
         }
 
         private void button2_Click(object sender, EventArgs e)
