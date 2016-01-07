@@ -43,7 +43,7 @@ namespace ImageConversion
             Bitmap temp = new Bitmap(pictureBox1.Image);
             pictureBox1.Image = temp;
             pictureBox1.Size = pictureBox1.Image.Size;
-            map = new Bitmap(pictureBox1.Image);
+            map = new Bitmap(controller.Origin);
         }
 
         #region Behaviours
