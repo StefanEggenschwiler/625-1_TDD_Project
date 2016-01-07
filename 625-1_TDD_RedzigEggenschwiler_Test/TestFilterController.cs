@@ -15,7 +15,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         public void TestAlpha()
         {
             int alpha = 255;
-            var controller = Substitute.For<IFilterController>();
+            var controller = new FilterController();
 
             controller.Alpha = alpha;
             Assert.AreEqual(controller.Alpha, alpha);
@@ -25,7 +25,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         public void TestRed()
         {
             int red = 100;
-            var controller = Substitute.For<IFilterController>();
+            var controller = new FilterController();
 
             controller.Red = red;
             Assert.AreEqual(controller.Red, red);
@@ -35,7 +35,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         public void TestGreen()
         {
             int green = 110;
-            var controller = Substitute.For<IFilterController>();
+            var controller = new FilterController();
 
             controller.Green = green;
             Assert.AreEqual(controller.Green, green);
@@ -45,7 +45,7 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         public void TestBlue()
         {
             int blue = 200;
-            var controller = Substitute.For<IFilterController>();
+            var controller = new FilterController();
 
             controller.Blue = blue;
             Assert.AreEqual(controller.Blue, blue);
@@ -54,11 +54,10 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         [TestMethod]
         public void TestFilterNames()
         {
-            List<string> filters = new List<string>(new string[] { "Filter 1", "Filter 2", "Filter 3" });
-            var controller = Substitute.For<IFilterController>();
-            controller.FilterNames.Returns(filters);
+            List<string> filters = new List<string>(new string[] { "None", "Mega Filter Custom", "Laplacian 5x5 of Gaussian 3x3" });
+            var controller = new FilterController();
 
-            Assert.AreEqual(controller.FilterNames, filters);
+            CollectionAssert.IsSubsetOf(filters, controller.FilterNames);
         }
 
         [TestMethod]
@@ -66,10 +65,22 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
             Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
-            var controller = Substitute.For<IFilterController>();
+            var controller = new FilterController();
 
             controller.Origin = testImage;
             Assert.AreEqual(controller.Origin, testImage);
+        }
+
+        [TestMethod]
+        public void TestAddFilter()
+        {
+            var controller = new FilterController();
+            var filter = Substitute.For<IFilter>();
+            String filterName = "Filter 1";
+
+            controller.addFilter(filterName, filter);
+
+
         }
 
         [TestMethod]
@@ -89,13 +100,11 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources));
             Image testImage = ((System.Drawing.Image)(resources.GetObject("testImage")));
-            Image testImage2 = ((System.Drawing.Image)(resources.GetObject("testImage2")));
             var controller = Substitute.For<IFilterController>();
 
             controller.executeFilter("Filter 1").Returns(testImage);
-            controller.executeFilter("Filter 2").Returns(testImage2);
 
-            Assert.AreNotEqual(controller.executeFilter("Filter 1"), testImage2);
+            Assert.AreEqual(controller.executeFilter("Filter 1"), testImage);
         }
     }
 }

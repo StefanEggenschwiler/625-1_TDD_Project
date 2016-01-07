@@ -15,5 +15,6 @@ namespace ImageConversion.Model
         Color Color { get; set; }
 
         Bitmap executeFilter(String filterName);
+        void addFilter(String filterName, IFilter filter);
     }
 }

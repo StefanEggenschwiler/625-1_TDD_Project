@@ -69,15 +69,5 @@ namespace _625_1_TDD_RedzigEggenschwiler_Test {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap testImage2 {
-            get {
-                object obj = ResourceManager.GetObject("testImage2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

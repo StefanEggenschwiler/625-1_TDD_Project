@@ -77,5 +77,15 @@ namespace ImageConversion.Model
             _filters.TryGetValue(filterName, out temp);
             return temp.applyFilter(new Bitmap(_origin), _alpha, _red, _green, _blue, _color);
         }
+
+        public void addFilter(String filterName, IFilter filter)
+        {
+            _filters.Add(filterName, filter);
+
+            _filterNames.AddRange(_filters.Keys);
+            _filterNames.Remove("None");
+            _filterNames.Sort();
+            _filterNames.Insert(0, "None");
+        }
     }
 }
