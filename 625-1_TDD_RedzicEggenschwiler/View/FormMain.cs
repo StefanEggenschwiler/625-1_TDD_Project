@@ -31,6 +31,7 @@ namespace ImageConversion
             AutoSize = true;
             controller = new FilterController();
             fileAccessHandler = new FileAccessHandler();
+            initializeColorPanel();
 
             cmbEdgeDetection.Items.AddRange(controller.FilterNames.ToArray());
             cmbEdgeDetection.SelectedIndex = 0;
@@ -187,7 +188,7 @@ namespace ImageConversion
         {
             controller.Origin = fileAccessHandler.LoadImage(pictureBox1, map);
             pictureBox1.Image = controller.Origin;
-            map = new Bitmap(pictureBox1.Image);
+            map = new Bitmap(controller.Origin);
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -219,6 +220,25 @@ namespace ImageConversion
         private void cmbEdgeDetection_SelectedIndexChanged(object sender, EventArgs e)
         {
             ApplyEdgeDetectionFilter();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            initializeColorPanel();
+        }
+
+        private void initializeColorPanel()
+        {
+            txtR.Text = 1 + "";
+            txtG.Text = 1 + "";
+            txtB.Text = 1 + "";
+
+            controller.Red = 1;
+            controller.Green = 1;
+            controller.Blue = 1;
+            controller.Color = Color.FromArgb(controller.Red, controller.Green, controller.Blue);
+
+            PaintColor(controller.Color);
         }
         #endregion
     }
