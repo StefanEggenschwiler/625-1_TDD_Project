@@ -50,20 +50,30 @@ namespace ImageConversion
         #endregion
 
         #region Behaviours
-        private void OnPictureBox1Click(int x, int y)
+        public Boolean OnPictureBox1Click(int x, int y)
         {
-            label1.Text = map.GetPixel(x, y).ToString();
-            PaintColor(map.GetPixel(x, y));
-            SelectedPixel = new Point(x, y);
+            if (x >= 0 || y >= 0)
+            {
+                label1.Text = map.GetPixel(x, y).ToString();
+                PaintColor(map.GetPixel(x, y));
+                SelectedPixel = new Point(x, y);
 
-            txtR.Text = map.GetPixel(x, y).R.ToString();
-            txtG.Text = map.GetPixel(x, y).G.ToString();
-            txtB.Text = map.GetPixel(x, y).B.ToString();
+                txtR.Text = map.GetPixel(x, y).R.ToString();
+                txtG.Text = map.GetPixel(x, y).G.ToString();
+                txtB.Text = map.GetPixel(x, y).B.ToString();
 
-            controller.Red = map.GetPixel(x, y).R;
-            controller.Green = map.GetPixel(x, y).G;
-            controller.Blue = map.GetPixel(x, y).B;
-            controller.Color = Color.FromArgb(controller.Red, controller.Green, controller.Blue);
+                controller.Red = map.GetPixel(x, y).R;
+                controller.Green = map.GetPixel(x, y).G;
+                controller.Blue = map.GetPixel(x, y).B;
+                controller.Color = Color.FromArgb(controller.Red, controller.Green, controller.Blue);
+                if (!controller.Color.IsEmpty)
+                {
+                    return true;
+                }
+                
+            }
+            return false;
+
         }
 
         private void PaintColor(Color c)
