@@ -27,8 +27,6 @@ namespace ImageConversion
         public FormMain()
         {
             InitializeComponent();
-            AutoScaleMode = AutoScaleMode.Font;
-            AutoSize = true;
             controller = new FilterController();
             fileAccessHandler = new FileAccessHandler();
             initializeColorPanel();
@@ -193,7 +191,7 @@ namespace ImageConversion
             {
                 controller.Origin = tmp;
                 pictureBox1.Image = controller.Origin;
-                map = new Bitmap(controller.Origin);
+                map = new Bitmap(tmp, pictureBox1.Size);
             }
         }
 
