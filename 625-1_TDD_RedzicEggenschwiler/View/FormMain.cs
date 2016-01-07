@@ -174,6 +174,7 @@ namespace ImageConversion
             if (bitmapResult != null)
             {
                 pictureBox1.Image = bitmapResult;
+                map = bitmapResult;
             }
         }
         #endregion
